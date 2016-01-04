@@ -10,7 +10,7 @@ var contacts = require('./routes/contact');
 
 var app = express();
 
-var dbName = 'contacts';
+var dbName = 'heroku_zqx62h7r';
 //for prod
 var connectionString = process.env.MONGOLAB_URI;
 
