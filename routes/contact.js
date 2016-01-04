@@ -15,7 +15,7 @@ router.route('/contacts')
     })
 
     .post(function(req,res){
-        console.log(req)
+        console.log(req.body)
         var contact=new Contact(req.body);
         contact.save(function(err){
             if(err)
