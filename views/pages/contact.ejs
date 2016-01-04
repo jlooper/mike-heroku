@@ -1,0 +1,80 @@
+<script type="text/x-kendo-template" id="contact-view">
+    <div class="view-content">    
+    <div class="container content">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Contact Mike</h2>
+          <form class="form-horizontal well">
+          
+                <div class="alert alert-dismissable alert-success" style="display:none">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  <strong>Well done! </strong><span class="success-message"></span>.
+                </div>
+                <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;
+                </div>
+                <div class="alert alert-dismissable alert-danger" style="display:none">
+                  <button type="button" class="close" data-dismiss="alert">×</button>
+                  <strong>Oops! </strong><span class="failure-message"></span>.
+                </div>
+                <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;
+                </div>
+            <fieldset>
+              <div class="form-group">
+                <label for="fName" class="col-lg-2 control-label">First Name</label>
+                <div class="col-lg-10">
+                  <input id="fName"  data-bind="value: fName"  name="fName" type="text" placeholder="First Name" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lName" class="col-lg-2 control-label">Last Name</label>
+                <div class="col-lg-10">
+                  <input id="lName"  data-bind="value: lName"  name="lName" type="text" placeholder="Last Name" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">Email</label>
+                <div class="col-lg-10">
+                  <input id="email" data-bind="value: email"  name="email" type="text" placeholder="Email" class="form-control">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="radio" class="col-lg-2 control-label">Status</label>
+                <div class="col-lg-10">
+                  <div class="radio">
+                    <label>
+                      <input id="status1" data-bind="checked: status" type="radio" name="status" value="hot" checked="">hot
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <input  data-bind="checked: status" id="status2" type="radio" name="status" value="not">not                    
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="alarm-time" class="col-lg-2 control-label">Schedule a house visit</label>
+                <div class="col-lg-10">          
+                  <div id="alarm-settings"><span class="alarm-time">
+                      <input id="schedule" name="schedule" data-role="timepicker" data-bind="value: schedule" value="10:00 AM"></span></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="message" class="col-lg-2 control-label">Message</label>
+                <div class="col-lg-10">
+                  <textarea id="message" data-bind="value: message" name="message" rows="3" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                  <button class="btn btn-default btn-lg">Cancel</button>
+                  <button type="submit" class="btn btn-primary btn-lg" data-bind="click: submitContactRequest">Submit</button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+  </script>

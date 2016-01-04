@@ -5,6 +5,8 @@ window.MIKE = (function($){
 	var _baseLayout = {};
 	var _contactView = {};
 	var _homeView = {};
+
+	
 	
 	//set up our views, layout, and routes
 	_MIKE.initSPA = function() {

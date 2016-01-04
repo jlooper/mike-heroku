@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var contacts = require('./routes/contact');
 
-var uriString = process.env.MONGOLAB_URI;
+var uriString = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test';
 
 mongoose.connect(uriString, function (err, res) {
   if (err) { 
@@ -25,14 +25,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);
 
 app.use('/api',contacts);
-app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
 app.get('/', function(request, response) {
-    response.render('index.html')
+    response.render('pages/index')
 });
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
