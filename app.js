@@ -12,9 +12,8 @@ var app = express();
 
 var dbName = 'contacts';
 //for prod
-var connectionString = process.env.MONGO_DB;
-//for test
-//var connectionString = 'place your connection string here as defined on Modulus';
+var connectionString = process.env.MONGOLAB_URI;
+
 mongoose.connect(connectionString);
 
 // view engine setup
