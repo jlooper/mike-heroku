@@ -2,13 +2,9 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 var contacts = require('./routes/contact');
-//var dbName = 'heroku_zqx62h7r';
-//for prod
-//var connectionString = process.env.MONGOLAB_URI;
 
-//mongoose.connect(connectionString);
 var uriString = process.env.MONGOLAB_URI;
-console.log(uriString)
+
 mongoose.connect(uriString, function (err, res) {
   if (err) { 
     console.log ('ERROR connecting to: ' + uriString + '. ' + err);
