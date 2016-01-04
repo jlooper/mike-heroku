@@ -13,6 +13,7 @@ var app = express();
 var dbName = 'heroku_zqx62h7r';
 //for prod
 var connectionString = process.env.MONGOLAB_URI;
+console.log(connectionString);
 
 mongoose.connect(connectionString);
 
