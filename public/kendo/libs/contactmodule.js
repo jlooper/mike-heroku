@@ -29,7 +29,7 @@ window.Contact = (function($){
 
 			var serializedDataToPost = JSON.stringify(dataToPost);
 
-			console.log(serializedDataToPost);
+			//console.log(serializedDataToPost);
 
 			$.ajax({
 				url: '/api/contacts',
@@ -37,7 +37,6 @@ window.Contact = (function($){
 				data: serializedDataToPost,
 				contentType: 'application/json'
 			}).done(function(data) {
-				console.log(data);
 				$('.alert-success').toggle();
 				$(".success-message").html(data.message);
 			}).fail(function(data) {
