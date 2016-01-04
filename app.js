@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 
 var contacts = require('./routes/contact');
 
@@ -18,6 +19,8 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
@@ -25,9 +28,8 @@ app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
 
 app.use('/api',contacts);
-app.use(express.json());
-app.use(express.urlencoded());
-
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 app.get('/', function(request, response) {
     response.render('index.html')
