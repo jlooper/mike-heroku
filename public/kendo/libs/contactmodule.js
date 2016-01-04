@@ -29,8 +29,6 @@ window.Contact = (function($){
 
 			var serializedDataToPost = JSON.stringify(dataToPost);
 
-			//console.log(serializedDataToPost);
-
 			$.ajax({
 				url: '/api/contacts',
 				type: 'post',
